@@ -1,0 +1,79 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient(
+        #000000,
+        #6b6b6b
+    );
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.TEXT{
+    color: white;
+    font-family: monospace;
+}
+
+#MainTitle{
+    text-align: center;
+    width: 100vw;
+}
+
+#MainDetails{
+    width: 75vh;
+    height: 25vh;
+
+    margin: 0 auto;
+    margin-top: 8vh;
+
+    display: flex;
+
+    background-color: #55555555;
+    border-radius: 5vh;
+    border-color: white;
+    border-style:solid;
+    box-shadow: inset 0 -10px 2vh 0 #aaaaaaff;
+}
+
+#PFP{
+    border-radius: 5vh;
+    border-color: white;
+    border-right-style:solid;
+}
+
+#Description{
+    padding-top: 1%;
+    padding-left: 2%;
+    text-align: left;
+    font-size: 22px;
+}
+
+#ListsDiv{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5vw;
+    width: 90vw;
+    height: 35vh;
+    margin-top: 8vh;
+}
+
+.List{
+    border-color: white;
+    border-style:solid;
+    background-color: #55555555;
+    height: 100%;
+    width:90%;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: inset 0 -10px 2vh 0 #aaaaaaff;
+}
+
+#MusicStatusText{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 25px;
+}
