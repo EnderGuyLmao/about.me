@@ -112,7 +112,6 @@ body{
 @media (max-width: 768px) {
     #MainTitle{
         width: 80vw;
-        height: 15vw;
         margin: 5vw auto;
     }
     
