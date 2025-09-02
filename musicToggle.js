@@ -1,19 +1,17 @@
 const music = document.getElementById("BGMusic");
 const musicIndicator = document.getElementById("MusicStatusText");
-playing = false;
 
-musicIndicator.textContent = "Music: Not Playing"
-document.addEventListener('click', function unmute() {
-    if(playing){
-        playing=false
-        musicIndicator.textContent = "Music: Not Playing"
-    }
-    else
-    {
-        playing=true
-        musicIndicator.textContent = "Music: Playing"
-    };
+let playing = false;
 
+musicIndicator.textContent = "Music: Not Playing";
+
+document.addEventListener("click", () => {
+    playing = !playing;
+
+    musicIndicator.textContent = playing ? "Music: Playing" : "Music: Not Playing";
     music.muted = !playing;
-    music.play();
+
+    music.play().catch(() => {
+        console.warn("Autoplay blocked until user interacts with the page.")
+    })
 })
