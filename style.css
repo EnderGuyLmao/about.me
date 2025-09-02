@@ -19,6 +19,7 @@ body{
 #MainTitle{
     text-align: center;
     width: 100vw;
+    font-size: 5vh;
 }
 
 #MainDetails{
@@ -79,7 +80,7 @@ body{
 }
 
 @media (max-width: 768px) {
-    #MainDetails {
+    #MainDetails{
         width: 90vw;
         height: auto;
         flex-direction: column;
@@ -88,36 +89,55 @@ body{
         border-radius: 2vh;
     }
 
-    #PFP {
+    #PFP{
         width: 50vw;
         height: auto;
         border-right: none;
         margin-bottom: 2vh;
     }
 
-    #Description {
+    #Description{
         font-size: 16px;
         text-align: center;
         padding: 0;
     }
 
-    #ListsDiv {
+    #ListsDiv{
         grid-template-columns: 1fr;
         width: 90vw;
         height: auto;
         gap: 2vh;
     }
 
-    .List {
+    .List{
         width: 100%;
         font-size: 16px;
         border-radius: 2vh;
     }
 
-    #MusicStatusText {
+    #MusicStatusText{
         font-size: 18px;
         position: relative;
         text-align: center;
         margin-top: 2vh;
     }
+}
+
+@keyframes FadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#MainTitle,
+#MainDetails,
+#ListsDiv,
+#MusicStatusText {
+    opacity: 0;
+    animation: FadeInUp 1.5s ease forwards;
 }
