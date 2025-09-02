@@ -28,7 +28,7 @@ body{
     border-radius: 5vh;
     text-align: center;
     width: 35vw;
-    margin: 0 auto;
+    margin: 2vw auto;
     font-size: 5vh;
     backdrop-filter: blur(var(--elements-bg-blur));
 }
@@ -107,6 +107,7 @@ body{
     #MainTitle{
         width: 80vw;
         height: 15vw;
+        margin: 5vw auto;
     }
     
     #MainDetails{
