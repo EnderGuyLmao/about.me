@@ -104,6 +104,11 @@ body{
 }
 
 @media (max-width: 768px) {
+    #MainTitle{
+        width: 80vw;
+        height: 15vw;
+    }
+    
     #MainDetails{
         width: 90vw;
         height: auto;
