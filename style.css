@@ -77,3 +77,47 @@ body{
     top: 0;
     font-size: 25px;
 }
+
+@media (max-width: 768px) {
+    #MainDetails {
+        width: 90vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 2vh;
+        border-radius: 2vh;
+    }
+
+    #PFP {
+        width: 50vw;
+        height: auto;
+        border-right: none;
+        margin-bottom: 2vh;
+    }
+
+    #Description {
+        font-size: 16px;
+        text-align: center;
+        padding: 0;
+    }
+
+    #ListsDiv {
+        grid-template-columns: 1fr;
+        width: 90vw;
+        height: auto;
+        gap: 2vh;
+    }
+
+    .List {
+        width: 100%;
+        font-size: 16px;
+        border-radius: 2vh;
+    }
+
+    #MusicStatusText {
+        font-size: 18px;
+        position: relative;
+        text-align: center;
+        margin-top: 2vh;
+    }
+}
