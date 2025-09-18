@@ -7,7 +7,7 @@ thumb.classList.add("off");
 thumb.classList.remove("on");
 txt.textContent = "OFF"
 
-document.addEventListener("click", () => {
+thumb.parentElement.addEventListener("click", () => {
     playing = !playing;
 
     music.muted = !playing;
