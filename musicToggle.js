@@ -1,15 +1,26 @@
 const music = document.getElementById("BGMusic");
-const musicIndicator = document.getElementById("MusicStatusText");
+const thumb = document.querySelector(".SliderThumb");
+const txt = document.getElementById("SliderText");
 
 let playing = false;
-
-musicIndicator.textContent = "Music: Not Playing";
+thumb.classList.add("off");
+thumb.classList.remove("on");
+txt.textContent = "OFF"
 
 document.addEventListener("click", () => {
     playing = !playing;
 
-    musicIndicator.textContent = playing ? "Music: Playing" : "Music: Not Playing";
     music.muted = !playing;
+
+    if (playing) {
+        thumb.classList.add("on");
+        thumb.classList.remove("off");
+    } else {
+        thumb.classList.add("off");
+        thumb.classList.remove("on");
+    }
+    txt.textContent = (playing) ? "ON" : "OFF";
+
 
     music.play().catch(() => {
         console.warn("Autoplay blocked until user interacts with the page.")

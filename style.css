@@ -1,19 +1,19 @@
 :root {
     --bg-color: linear-gradient(#000000,#204);
-    --elements-border-color: #1ee;
-    --elements-glow-color: #26e;
-    --elements-bg-color: #26e1;
+    --elements-border-color: #c0c;
+    --elements-glow-color: #a0a;
+    --elements-bg-color: #62e1;
     --elements-bg-blur: 3px;
 }
 
 body{
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-repeat: no-repeat;
     background: var(--bg-color);
     margin: 0;
     min-height: 100vh;
-    min-width: 100%;
+    min-width: 100vw;
 }
 
 .TEXT{
@@ -27,20 +27,22 @@ body{
     box-shadow: inset 0 -5px 2vh 0 var(--elements-glow-color);
     border-radius: 5vh;
     text-align: center;
-    width: 35vw;
+    width: 50vw;
+    height: 10vh;
+    line-height: 10vh;
     margin: 2vw auto;
-    font-size: 5vh;
+    font-size: 6.5vh;
     backdrop-filter: blur(var(--elements-bg-blur));
     transition: border-color 0.25s ease,
                 box-shadow 0.25s ease;
 }
 
 #MainDetails{
-    width: 75vh;
+    width: 75vw;
     height: 25vh;
 
     margin: 0 auto;
-    margin-top: 8vh;
+    margin-top: 5vh;
 
     display: flex;
 
@@ -73,7 +75,6 @@ body{
     margin: 0 auto;
     width: 90vw;
     height: 35vh;
-    margin-top: 8vh;
 }
 
 .List{
@@ -92,14 +93,6 @@ body{
                 box-shadow 0.25s ease;
 }
 
-#MusicStatusText{
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 25px;
-    text-shadow: 0px 0px 1vh var(--elements-glow-color);
-}
-
 #BGParticles{
     position: fixed;
     top: 0;
@@ -109,11 +102,66 @@ body{
     z-index: -1;
 }
 
+.SliderContainer{
+    position: relative;
+    border: solid;
+    width: 30vw;
+    height: 10vh;
+    margin: 5vh auto;
+    border-radius: 5vh;
+    background-color: var(--elements-bg-color);
+    border: solid var(--elements-border-color);
+    box-shadow: inset 0 -10px 2vh 0 var(--elements-glow-color);
+    backdrop-filter: blur(var(--elements-bg-blur));
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+.SliderThumb{
+    position: absolute;
+    top: 50%;
+    
+    background-color: #fff;
+    width: 8vh;
+    height: 8vh;
+    border-radius: 100%;
+    
+    transition: left 0.5s ease,
+                transform 0.5s ease;
+
+    z-index: 2;
+}
+
+.SliderThumb.off{
+    left: 5%;
+    transform: translate(-5%, -50%);
+    transition: left 0.5s ease,
+                transform 0.5s ease;
+}
+.SliderThumb.on{
+    left: 95%;
+    transform: translate(-95%, -50%);
+    transition: left 0.5s ease,
+                transform 0.5s ease;
+}
+
+#SliderText{
+    margin-top: auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 5vh;
+    color:#f5f7;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     #MainTitle{
-        width: 80vw;
-        height: 15vw;
-        margin: 5vw auto;
+        width: 90vw;
+        height: 10vh;
+        margin-top: 2vh;
+        margin-left: auto;
+        line-height: 10vh;
     }
     
     #MainDetails{
@@ -151,35 +199,58 @@ body{
         border-radius: 2vh;
     }
 
-    #MusicStatusText{
-        font-size: 18px;
-        position: relative;
-        text-align: center;
-        margin-top: 2vh;
+    .SliderContainer{
+        margin: 3vh auto;
+        width: 60vw;
+        height: 10vh;
+    }
+    .SliderThumb{
+        width: 8vh;
+        height: 8vh;
+    }
+    #SliderText{
+        line-height: 10vh;
+        font-size: 5vh;
     }
 }
 
 @keyframes FadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(100%);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-#MainTitle,
-#MainDetails,
-#ListsDiv,
-#MusicStatusText {
+@keyframes FadeInDown {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+} 
+
+.SliderContainer,
+#MainDetails {
     opacity: 0;
-    animation: FadeInUp 1.5s ease forwards;
+    animation: FadeInDown 1.5s cubic-bezier(0,0,0,1) forwards;
+}
+
+#MainTitle,
+#ListsDiv {
+    opacity: 0;
+    animation: FadeInUp 1.5s cubic-bezier(0,0,0,1) forwards;
 }
 
 #MainTitle:hover,
 #MainDetails:hover,
+.SliderContainer:hover,
 .List:hover{
     border-color: #fff;
     box-shadow: inset 0 -5px 2vh 0 #fff;

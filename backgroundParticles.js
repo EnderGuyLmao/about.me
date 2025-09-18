@@ -15,8 +15,8 @@ const particles = Array.from({length: 100}, () => ({
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
+        p.x += p.dx * 2;
+        p.y += p.dy * 2;
         if(p.x < 0 || p.x > canvas.width) p.dx *= -1;
         if(p.y < 0 || p.y > canvas.height) p.dy *= -1;
         ctx.beginPath();
