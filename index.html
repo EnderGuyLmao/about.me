@@ -2,48 +2,45 @@
 
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Me</title>
         <link rel="stylesheet" href="style.css">
-        <script src="musicToggle.js" defer></script>
-        <script src="backgroundParticles.js" defer></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta property="og:title" content="My About Me Page"/>
-        <meta property="og:description" content="Learn more about me :J"/>
-        <meta property="og:image" content="https://enderguylmao.github.io/about.me/pfp.jpg"/>
-        <meta property="og:url" content="https://enderguylmao.github.io/about.me/"/>
-        <meta property="og:type" content="website"/>
+        <audio autoplay src="music.mp3" id="MUSIC" loop></audio>
     </head>
     <body>
-        <canvas id="BGParticles"></canvas>
-        <audio id="BGMusic" src="music.mp3" muted loop></audio>
-        <h1 id="MainTitle" class="TEXT">About Me</h1>
-        
-        <div id="MainDetails">
-            <img src="pfp.jpg" id="PFP">
-            <p id="Description" class="TEXT">Hi! You can call me Ender. I'm a romanian who was born and lives in Italy. My birthday is on October 17th, 2008. I practice hobbies like listening to music, playing games and programming.</p>
+        <div class="MainContainer" id="MAIN">
+            <img class="PFP" src="pfp.png">
+            <p class="Description">Hi! You can call me Ender. I'm a romanian who was born and lives in Italy. My birthday is on October 17th, 2008. I practice hobbies like listening to music, playing games and programming.</p>
         </div>
-
-        <div class="SliderContainer">
-            <div class="SliderThumb"></div>
-            <p id="SliderText" class="TEXT">ON</p>
+        <div class="SocialsContainer">
+            <a target="_blank" href="https://discord.com/users/989561606788751370">
+                <div class="SocialElement">
+                <img src="discord_logo.png" class="SocialIMG">
+                <p class="SocialTXT">Discord</p>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.roblox.com/users/1559040093/profile">
+                <div class="SocialElement">
+                <img src="roblox_logo.jpg" class="SocialIMG">
+                <p class="SocialTXT">Roblox</p>
+                </div>
+            </a>
+            <a target="_blank" href="https://github.com/EnderGuyLmao">
+                <div class="SocialElement">
+                <img src="github_logo.jpg" class="SocialIMG">
+                <p class="SocialTXT">GitHub</p>
+                </div>
+            </a>
         </div>
-
-        <div id="ListsDiv">
-            <div class="List">
-                <h2 class="ListHead TEXT">Games</h2>
-                <p class="ListElement TEXT">I play:<br><br>• Hollow Knight<br>• Elden Ring<br>• Roblox<br>• Minecraft</p>
-            </div>
-
-            <div class="List">
-                <h2 class="ListHead TEXT">Music</h2>
-                <p class="ListElement TEXT">I Listen to:<br><br>• Glitch Hop<br>• Funk<br>• Synthwave</p>
-            </div>
-
-            <div class="List">
-                <h2 class="ListHead TEXT">Skills</h2>
-                <p class="ListElement TEXT">I'm able to:<br><br>• Program:<br>-C#<br>-Python<br>-Luau<br>• Design UI</p>
-            </div>
+        <div class="MusicToggler" id="MusicToggler">
+            <div class="MusicThumb" id="MusicThumb"></div>
         </div>
+        <a target="_blank" href="https://www.youtube.com/watch?v=aYKN5_b7yVo&list=RDaYKN5_b7yVo&start_radio=1">
+            <p class="NowPlaying">Music: Camellia - Flamewall</p>
+        </a>
+        <div id="RotatingBGCube1">
+            <div id="RotatingBGCube1-1"></div>
+        </div>
+        <script src="music_manager.js"></script>
     </body>
 </html>
