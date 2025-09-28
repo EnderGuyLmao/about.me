@@ -344,7 +344,7 @@ a {
     .NowPlaying {
         position: relative;
 
-        top: 15vh;
+        top: 10vh;
         bottom: 0;
 
         width: 100vw;
