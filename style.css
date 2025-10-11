@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #a5a5;
-    --bg-color-2: #b5b5;
-    --border-color1: #9495;
-    --highlighted-txt-color: #f0f;
-    --gradient-color: #a4a;
+    --bg-color: #b5a5;
+    --bg-color-2: #c5b5;
+    --border-color1: #a495;
+    --highlighted-txt-color: #f1f;
+    --gradient-color: #faf;
 }
 
 body {
