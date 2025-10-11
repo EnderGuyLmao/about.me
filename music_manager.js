@@ -52,7 +52,7 @@ function animate() {
 
         let t = avg / 255;
         
-        rotating_cube_1.style.opacity = t*2;
+        rotating_cube_1.style.opacity = t*10;
 
         rot = lerp(rot, rot + (avg/5), t);
         rotating_cube_1.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`
