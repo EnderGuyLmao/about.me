@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #b5a5;
-    --bg-color-2: #c5b5;
-    --border-color1: #a495;
-    --highlighted-txt-color: #f1f;
-    --gradient-color: #faf;
+    --bg-color: #fef5;
+    --bg-color-2: #fdf5;
+    --border-color1: #0006;
+    --highlighted-txt-color: #fff;
+    --gradient-color: #fef;
 }
 
 body {
@@ -25,45 +25,43 @@ a {
 }
 
 .MainContainer {
-    position: relative;
+    position: absolute;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     overflow: hidden;
-    gap: 3%;
 
-    top: 5vh;
-
-    width: 100vw;
-    height: 30vh;
+    width: 25vw;
+    height: 100vh;
+    border-right: solid #fff;
 
     background-color: var(--bg-color);
 }
 
 .PFP {
-    height: 85%;
+    width: 75%;
 
     border-radius: 100%;
-    border: solid 2vh var(--border-color1);
+    border: solid 1vh #fff;
 
     background-color: var(--bg-color-2);
 }
 
 .Description {
     height: 60%;
-    width: 50%;
-    padding: 1em;
+    width: 70%;
+    padding: 0.5em;
 
     font-family: monospace;
-    font-size: x-large;
+    font-size: 200%;
     text-align: center;
     overflow: hidden;
     word-wrap: break-word;
 
+    border: solid #fff;
     border-radius: 2.5vh;
-    border-left: solid var(--border-color1) 1vw;
 
-    background-color: var(--bg-color-2);
+    background-color: var(--border-color1);
     color: #fff;
 }
 
@@ -74,20 +72,17 @@ a {
     justify-content: center;
     gap: 5%;
 
-    top: 15vh;
-    left: 25vw;
-    transform: translateX(-50%);
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 
-    width: 20vw;
+    width: 25vw;
     height: 30vh;
 
-    border-left: solid var(--border-color1) 2vw;
-    border-top-left-radius: 10%;
-    border-bottom-left-radius: 10%;
-    border-top-right-radius: 5%;
-    border-bottom-right-radius: 5%;
+    border: solid #fff;
+    border-radius: 5%;
 
-    background-color: var(--bg-color);
+    background-color: var(--border-color1);
 }
 
 .SocialElement {
@@ -103,12 +98,33 @@ a {
         color 0.25s ease-in-out;
 }
 
+.SocialElement2 {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    height: 9vh;
+
+    right: 0;
+    transition: right 0.25s ease-in-out,
+        color 0.25s ease-in-out;
+}
+
 .SocialElement:hover {
     left: 10%;
     transition: left 0.25s ease-in-out;
 }
+.SocialElement2:hover {
+    right: 10%;
+    transition: right 0.25s ease-in-out;
+}
 
 .SocialElement:hover p {
+    color: var(--highlighted-txt-color);
+    transition: color 0.25s ease-in-out;
+}
+.SocialElement2:hover p {
     color: var(--highlighted-txt-color);
     transition: color 0.25s ease-in-out;
 }
@@ -116,7 +132,7 @@ a {
 .SocialIMG {
     height: 100%;
 
-    border-radius: 25%;
+    border-radius: 15%;
 }
 
 .SocialTXT {
@@ -129,25 +145,25 @@ a {
 
     font-family: monospace;
     text-align: center;
-    font-size: xx-large;
+    font-size: 250%;
     font-weight: bold;
 
-    color: #fff;
+    color: #000;
 }
 
 .NowPlaying {
     position: relative;
-    top: 10vh;
-    bottom: 0;
+    top: 45vh;
+    left: 20vw;
 
-    width: 100vw;
+    width: 80vw;
     height: 5vh;
 
     font-family: monospace;
-    text-align: center;
-    font-size: xx-large;
+    text-align: right;
+    font-size: 250%;
 
-    color: #fff;
+    color: #000;
     transition: color 0.25s ease-in-out;
 }
 
@@ -181,7 +197,7 @@ a {
     height: 50%;
     transform: translate(50%, 50%);
 
-    background-color: var(--border-color1);
+    background-color: var(--bg-color-2);
 }
 
 .MusicToggler {
@@ -189,12 +205,13 @@ a {
     height: 15vh;
     width: 20vw;
 
-    bottom: 7vh;
-    left: 75vw;
+    top: 40vh;
+    left: 50vw;
     border-radius: 100vw;
     transform: translateX(-50%);
 
-    background-color: var(--bg-color);
+    background-color: var(--border-color1);
+    border: solid #fff;
 }
 
 .MusicThumb {
@@ -225,206 +242,116 @@ a {
         transform 0.25s ease-out;
 }
 
-@media (max-width: 850px) {
+/* === Mobile Version === */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        width: 100vw;
+        overflow-y: auto;
+        background: linear-gradient(to top left, var(--gradient-color), #000);
+    }
 
     .MainContainer {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-
-        top: 5vh;
-        gap: 0;
-
         width: 100vw;
-        height: 40vh;
-
-        background-color: var(--bg-color);
+        height: auto;
+        border-right: none;
+        border-bottom: solid #fff;
     }
 
     .PFP {
-        height: 60%;
-
-        border-radius: 100%;
-        border: solid 1vh var(--border-color1);
-
-        background-color: var(--bg-color-2);
+        width: 50%;
+        border-width: 0.5vh;
+        margin-top: 2vh;
     }
 
     .Description {
-        height: 40%;
-        width: 80%;
-        padding: 1em;
-
-        font-size: medium;
-        font-family: fantasy;
-        text-align: center;
-        overflow: hidden;
-        word-wrap: break-word;
-
-        border-radius: 2.5vh;
-        border-left: solid var(--border-color1) 1vw;
-        border-right: solid var(--border-color1) 1vw;
-
-        background-color: var(--bg-color-2);
-        color: #fff;
+        width: 85%;
+        font-size: 140%;
+        height: auto;
+        margin-bottom: 3vh;
     }
 
     .SocialsContainer {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5%;
-
-        top: 8vh;
-        left: 50vw;
-        transform: translateX(-50%);
-
-        width: 90vw;
-        height: 25vh;
-
-        border-left: 0;
-        border-top: solid var(--border-color1) 2vw;
-        border-bottom: solid var(--border-color1) 2vw;
-        border-top-left-radius: 10%;
-        border-bottom-left-radius: 10%;
-        border-top-right-radius: 5%;
-        border-bottom-right-radius: 5%;
-
-        background-color: var(--bg-color);
-    }
-
-    .SocialElement {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 7vh;
-
+        overflow: hidden;
+        top: 0;
         left: 0;
-        transition: left 0.25s ease-in-out,
-            color 0.25s ease-in-out;
+        transform: none;
+
+        width: 80vw;
+        height: auto;
+        margin: 5vh auto;
+        border-radius: 3vh;
     }
 
-    .SocialElement:hover {
-        left: 10%;
-        transition: left 0.25s ease-in-out;
+    .SocialElement,
+    .SocialElement2 {
+        justify-content: center;
+        height: 8vh;
+        left: 0;
+        right: 0;
+        transition: none;
+        border: solid 0.1vh #fff;
     }
 
-    .SocialElement:hover p {
-        color: var(--highlighted-txt-color);
-        transition: color 0.25s ease-in-out;
+    .SocialElement:hover,
+    .SocialElement2:hover {
+        left: 0;
+        right: 0;
+    }
+
+    .SocialElement p,
+    .SocialElement2 p {
+        font-size: xx-large;
+        color: #fff;
     }
 
     .SocialIMG {
-        height: 100%;
-
-        border-radius: 25%;
+        height: 7vh;
     }
 
     .SocialTXT {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 100%;
-        width: 50%;
-
-        font-family: monospace;
-        text-align: center;
-        font-size: xx-large;
-        font-weight: bold;
-
-        color: #fff;
+        font-size: x-large;
     }
 
     .NowPlaying {
         position: relative;
-
-        top: 10vh;
-        bottom: 0;
-
-        width: 100vw;
-        height: 5vh;
-
-        font-family: monospace;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
         text-align: center;
-        font-size: x-large;
-
-        color: #fff;
-        transition: color 0.25s ease-in-out;
-    }
-
-    .NowPlaying:Hover {
-        color: var(--highlighted-txt-color);
-        transition: color 0.25s ease-in-out;
-    }
-
-    #RotatingBGCube1 {
-        position: fixed;
-        justify-content: center;
-        align-items: center;
-        z-index: -1;
-
-        width: 50vh;
-        height: 50vh;
-
-        background-color: var(--bg-color);
-    }
-
-    #RotatingBGCube1-1 {
-        z-index: -1;
-
-        width: 50%;
-        height: 50%;
-        transform: translate(50%, 50%);
-
-        background-color: var(--border-color1);
+        font-size: xx-large;
+        margin-top: 3vh;
     }
 
     .MusicToggler {
-        position: relative;
-        height: 8vh;
-        width: 60vw;
-
-        top: 10vh;
-        left: 50vw;
+        top: 0;
+        left: 50%;
         transform: translateX(-50%);
-
-        border-radius: 100vw;
-
-        background-color: var(--bg-color);
+        width: 60vw;
+        height: 10vh;
+        margin-bottom: 5vh;
     }
 
     .MusicThumb {
-        position: relative;
-        height: 6vh;
-        width: 6vh;
-
-        top: 50%;
-        left: 10%;
-        transform: translate(-10%, -50%);
-
-        border-radius: 100%;
-
-        background-color: #fff;
-
-        transition: top 0.25s ease-out,
-            left 0.25s ease-out,
-            transform 0.25s ease-out;
+        width: 7vh;
+        height: 7vh;
     }
 
     .MusicThumb.active {
-        top: 50%;
         left: 90%;
         transform: translate(-90%, -50%);
-
-        transition: top 0.25s ease-out,
-            left 0.25s ease-out,
-            transform 0.25s ease-out;
     }
 
+    #RotatingBGCube1 {
+        width: 100vw;
+        height: 100vw;
+    }
+
+    #RotatingBGCube1-1 {
+        width: 50%;
+        height: 50%;
+    }
 }
